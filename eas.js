@@ -14,3 +14,26 @@ for (let i = 0; i < 15; i++) {
         divRow2.appendChild(divColumn);
     }
 }
+
+eachBox = document.getElementsByClassName('box');
+console.log(eachBox);
+Array.from(eachBox).forEach((element) => {
+    element.addEventListener('mousedown', () => {
+        if (element.classList.contains("highlight")) {
+            element.classList.remove("highlight");
+        }
+        else {
+        element.classList.add("highlight");
+        }
+    })
+    element.addEventListener('mouseenter', (e) => {
+        if (e.buttons > 0) {
+            // if (element.classList.contains("highlight")) {
+            //     element.classList.remove("highlight");
+            // }
+            // else {
+            element.classList.add("highlight");
+            // }
+        }
+    })
+})
